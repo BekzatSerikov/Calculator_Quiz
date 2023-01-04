@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+.container {
+    position: relative;
+    padding: 0 100px;
+    min-height: 100vh;
+}
+
+.container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    z-index: -2;
+}
+
+.container:after {
+    content: 'Test';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 18vw;
+    z-index: -2;
+    font-weight: 700;
+    color: #333;
+    opacity: 0.06;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+header .logo {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+header .logo span {
+    color: blue;
+
+}
+
+header ul {
+    position: relative;
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+    margin: 0 15px;
+
+}
+
+header ul li a {
+    bottom: 30px;
+    left: 560px;
+    position: relative;
+    font-size: 18px;
+    padding: 4px 20px;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+header ul li a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: blue;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+}
+
+header ul li a:hover:before,
+header ul li a:active:before {
+    width: 40px;
+}
+header ul li:nth-child(3) a,
+header ul li:nth-child(4) a {
+    color: #000000;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.content .bannerText {
+    position: relative;
+    max-width: 500px;
+    margin-right: 50px;
+}
+
+.content .bannerText h2 {
+    font-size: 54px;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1.2em;
+}
+
+.content .bannerText p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8em;
+    margin: 20px 0;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.icons .sci {
+    position: relative;
+    display: flex;
+}
+
+.icons .sci li {
+    list-style: none;
+    margin-right: 30px;
+}
+
+.icons .sci li img {
+    display: inline-block;
+    max-height: 24px;
+    transition: 0.5s ease-in-out;
+}
+
+.icons .sci li:hover img {
+    transform: translateY(-10px);
+}
+
+@media (max-width: 992px) {
+    .container {
+        padding: 20px 50px;
+    }
+
+    .container:before {
+        display: none;
+    }
+
+    header {
+        padding: 0;
+    }
+
+    .content .bannerText h2 {
+        font-size: 30px;
+    }
+
+    .content {
+        margin-top: 0;
+        flex-direction: column-reverse;
+    }
+
+    .content .img {
+        width: 100%;
+        height: 55vh;
+        margin: 20px 0;
+    }
+
+    .content .bannerText {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    header ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        z-index: 10000;
+        padding: 100px 0;
+    }
+
+    header ul li {
+        padding: 20px;
+        text-align: center;
+    }
+
+    header ul li a {
+        color: #0f0631 !important;
+        font-size: 36px;
+    }
+
+    header ul li a:hover:before,
+    header ul li a:active:before {
+        width: 100%;
+    }
+}
